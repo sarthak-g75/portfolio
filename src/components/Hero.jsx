@@ -23,7 +23,7 @@ const Hero = () => {
         >
           <img
             className='w-24 h-24 2xl:w-44 2xl:h-44 lg:w-32 lg:h-32'
-            src='/logo.svg'
+            src='/lightLogo.svg'
             alt=''
           />
           <h1 className='text-3xl font-thin 2xl:text-9xl lg:text-6xl'>
@@ -103,6 +103,7 @@ const Hero = () => {
           damping: 10,
           delay: 1.4,
         }}
+        style={{ x: yProgress * -300 }}
         className='flex flex-col lg:hidden'
       >
         <h2 className='text-3xl font-bold lg:w-1/2 2xl:text-9xl lg:text-6xl lg:text-wrap text-nowrap'>
