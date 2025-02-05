@@ -1,9 +1,11 @@
 import Hero from '../components/Hero.jsx'
+import Projects from '../components/Projects.jsx'
 const Landing = () => {
   return (
     <>
       <Hero />
-      <div className='flex flex-col items-center justify-center w-full h-screen gap-4 lg:flex-row '></div>
+      <Projects />
+      {/* <div className='flex flex-col items-center justify-center w-full h-screen gap-4 lg:flex-row '></div> */}
     </>
   )
 }

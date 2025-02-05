@@ -10,7 +10,7 @@ const links = [
 const delay = 0.5
 const Navbar = () => {
   return (
-    <nav className='relative  text-primary h-[8vh] flex items-center lg:px-10 px-4'>
+    <nav className='relative   h-[8vh] flex items-center lg:px-10 px-4'>
       <div className='flex items-center justify-between w-full'>
         <motion.h2
           initial={{ y: 30, opacity: 0 }}

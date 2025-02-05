@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import { useSpring, motion } from 'motion/react'
 const cursor = () => {
   const [hidden, setHidden] = useState(true)
+  const [hoveredText, setHoveredText] = useState('')
+  const [isHovered, setIsHovered] = useState(false)
   const spring = {
     stiffness: 200,
     damping: 10,
@@ -14,32 +16,64 @@ const cursor = () => {
 
   useEffect(() => {
     const mouseMov = (e) => {
-      //   console.log(e)
       setHidden(false)
-      //   console.log(e.clientX, e.clientY)
-      mousePos.x.set(e.clientX - 12)
-      mousePos.y.set(e.clientY - 12)
+
+      const size = isHovered ? 50 : 12 // Adjust offset dynamically based on state
+      mousePos.x.set(e.clientX - size)
+      mousePos.y.set(e.clientY - size)
     }
-    console.log(mousePos)
-    console.log(mousePos.x)
 
     window.addEventListener('mousemove', mouseMov)
 
     return () => {
       window.removeEventListener('mousemove', mouseMov)
     }
+  }, [isHovered]) // Depend on `isHovered` so it updates dynamically
+
+  useEffect(() => {
+    const hoverTargets = document.querySelectorAll('[data-hover-text]')
+
+    hoverTargets.forEach((target) => {
+      target.addEventListener('mouseenter', (e) => {
+        setHoveredText(e.target.getAttribute('data-hover-text'))
+        setIsHovered(true)
+      })
+
+      target.addEventListener('mouseleave', () => {
+        setHoveredText('')
+        setIsHovered(false)
+      })
+    })
+
+    return () => {
+      hoverTargets.forEach((target) => {
+        target.removeEventListener('mouseenter', () => {})
+        target.removeEventListener('mouseleave', () => {})
+      })
+    }
   }, [])
   return (
-    <motion.span
-      transition={{ type: 'tween', ease: 'linear', duration: 0 }}
-      className={`fixed hidden md:inline top-0 left-0 z-[999] rounded-full pointer-events-none transition-[height,width,border,background] duration-200 cursor-pointer w-6 h-6  mix-blend-difference bg-white`}
+    <motion.div
+      className={`fixed top-0 left-0 z-[999] rounded-full pointer-events-none ${
+        !isHovered && `mix-blend-difference`
+      } flex items-center justify-center text-black font-medium 
+      `}
       style={{
         x: mousePos.x,
         y: mousePos.y,
+        width: isHovered ? 100 : 24,
+        height: isHovered ? 100 : 24,
+        backgroundColor: isHovered ? 'black' : 'white',
+        color: isHovered ? 'white' : 'black',
+        borderRadius: '50%',
+
+        transition: 'width 0.2s ease, height 0.2s ease',
       }}
       initial={{ opacity: 0 }}
       animate={{ opacity: hidden ? 0 : 1 }}
-    />
+    >
+      {isHovered && <span className='text-sm'>{hoveredText}</span>}
+    </motion.div>
   )
 }
 

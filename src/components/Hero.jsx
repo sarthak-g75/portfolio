@@ -7,7 +7,7 @@ const Hero = () => {
   scroll((progress) => setYProgress(progress))
   // console.log(yProgress)
   return (
-    <section className='flex flex-col items-center justify-between lg:justify-center py-16 pb-36 lg:pb-0 lg:py-0  h-[92vh] gap-4 overflow-hidden text-primary px-10 lg:px-0'>
+    <section className='flex flex-col items-center justify-between lg:justify-center py-10 pb-20 lg:pb-0 lg:py-0 h-[75vh] lg:h-[80vh] gap-4 overflow-hidden px-10 lg:px-0'>
       <div className='flex flex-col gap-4'>
         <motion.div
           initial={{ y: 50, opacity: 0 }}
