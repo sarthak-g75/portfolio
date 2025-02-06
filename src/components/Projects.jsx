@@ -2,7 +2,7 @@ import { motion } from 'motion/react'
 import ProjectSection from './ProjectSection'
 const Projects = () => {
   return (
-    <div className='flex flex-col items-center h-screen '>
+    <div className='flex flex-col items-center '>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

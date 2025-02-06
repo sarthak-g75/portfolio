@@ -1,47 +1,39 @@
 import { motion } from 'motion/react'
-import { useEffect, useState } from 'react'
-const text = 'Konnect Kitchen'
+import { Link } from 'react-router-dom'
+import Button from './Button'
 const ProjectSection = () => {
-  const [displayedText, setDisplayedText] = useState('')
-  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
-  const scrambleTime = 50 // Speed of scrambling (ms per frame)
-  const finalDelay = 100 // Delay before the final reveal
-
-  useEffect(() => {
-    let currentText = Array(text.length).fill(' ')
-    let progress = 0
-
-    const interval = setInterval(() => {
-      if (progress < text.length) {
-        for (let i = progress; i < text.length; i++) {
-          currentText[i] = chars[Math.floor(Math.random() * chars.length)]
-        }
-        setDisplayedText(currentText.join(''))
-      } else {
-        clearInterval(interval)
-        setTimeout(() => setDisplayedText(text), finalDelay)
-      }
-      progress++
-    }, scrambleTime)
-
-    return () => clearInterval(interval)
-  }, [text])
   return (
     <div className='w-full '>
       <div className='flex flex-col justify-between lg:flex-row '>
         <div className='flex flex-col justify-between w-1/4'>
-          <h3 className='text-4xl font-medium'>{displayedText}</h3>
-          <p className='text-lg'>
-            Konnect Kitchen—Delhi NCR’s one-stop shop for premium crockery &
-            utensils, serving up style with a seamless shopping experience!
-          </p>
+          <h3 className='text-4xl font-medium lg:text-nowrap'>
+            Konnect Kitchen
+          </h3>
+          <div className='flex flex-col gap-4'>
+            <p className='text-lg'>
+              Konnect Kitchen—Delhi NCR’s one-stop shop for premium crockery &
+              utensils, serving up style with a seamless shopping experience!
+            </p>
+            <Button text='Read More' />
+          </div>
         </div>
-        <img
-          data-hover-text='Read More'
-          src='/demo.png'
-          alt=''
-          className='lg:w-[1200px] lg:h-[600px] object-cover aspect-[1/1]'
-        />
+        <Link to='/'>
+          <motion.img
+            initial={{ opacity: 0, y: 30 }} // Start slightly lower for a natural rise effect
+            whileInView={{ opacity: 1, y: 0 }} // Moves to its normal position
+            transition={{
+              type: 'spring',
+              stiffness: 120, // Slightly more bounce for a snappy feel
+              damping: 22, // Smooth stop without feeling abrupt
+              delay: 0.3, // Reduces wait time
+            }}
+            data-hover-text='Read More'
+            viewport={{ once: true, amount: 0.3 }} // Triggers slightly sooner
+            src='/demo.png'
+            alt=''
+            className='2xl:w-[1200px] 2xl:h-[600px] lg:w-[800px] lg:h-[400px] object-cover aspect-[1/1] cursor-pointer'
+          />
+        </Link>
       </div>
     </div>
   )

@@ -12,14 +12,17 @@ const Navbar = () => {
   return (
     <nav className='relative   h-[8vh] flex items-center lg:px-10 px-4'>
       <div className='flex items-center justify-between w-full'>
-        <motion.h2
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, ease: easeInOut }}
-          className='text-lg font-semibold 2xl:text-2xl text-nowrap lg:text-xl'
-        >
-          {name}
-        </motion.h2>
+        <Link to='/'>
+          <motion.h2
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            data-hover-text='Home'
+            transition={{ duration: 0.8, ease: easeInOut }}
+            className='text-lg font-semibold 2xl:text-2xl text-nowrap lg:text-xl'
+          >
+            {name}
+          </motion.h2>
+        </Link>
         <div className='flex gap-4 text-lg font-medium lg:gap-8'>
           {links.map((link, index) => (
             <motion.h2

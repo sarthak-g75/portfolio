@@ -23,8 +23,9 @@ const Hero = () => {
         >
           <img
             className='w-24 h-24 2xl:w-44 2xl:h-44 lg:w-32 lg:h-32'
-            src='/lightLogo.svg'
-            alt=''
+            src='/darkLogo.svg'
+            // src='/lightLogo.svg'
+            alt='logo'
           />
           <h1 className='text-3xl font-thin 2xl:text-9xl lg:text-6xl'>
             I'm Sarthak Gupta

@@ -63,11 +63,14 @@ const cursor = () => {
         y: mousePos.y,
         width: isHovered ? 100 : 24,
         height: isHovered ? 100 : 24,
-        backgroundColor: isHovered ? 'black' : 'white',
+        backgroundColor: isHovered ? 'rgba(0, 0, 0, 0.6)' : 'white',
         color: isHovered ? 'white' : 'black',
+        // backgroundOpacity: isHovered ? '25%' : '100%',
         borderRadius: '50%',
-
-        transition: 'width 0.2s ease, height 0.2s ease',
+        backdropFilter: isHovered ? 'blur(4px)' : 'none',
+        WebkitBackdropFilter: isHovered ? 'blur(4px)' : 'none',
+        transition:
+          'width 0.2s ease, height 0.2s ease, background-color 0.2s ease, backdrop-filter 0.2s ease',
       }}
       initial={{ opacity: 0 }}
       animate={{ opacity: hidden ? 0 : 1 }}
