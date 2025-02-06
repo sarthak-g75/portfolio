@@ -8,7 +8,7 @@ const AutoCarousel = ({ link, images }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % images.length)
-    }, 3000) // Change image every 3 seconds
+    }, 3000)
 
     return () => clearInterval(interval)
   }, [])
@@ -16,7 +16,7 @@ const AutoCarousel = ({ link, images }) => {
   return (
     <Link
       to={link}
-      className='relative flex justify-center w-full h-auto overflow-hidden'
+      className='relative flex justify-center w-full h-auto overflow-hidden '
     >
       <div data-hover-text='Read More'>
         <motion.img
@@ -32,7 +32,7 @@ const AutoCarousel = ({ link, images }) => {
             damping: 20,
             duration: 0.8,
           }}
-          className='2xl:w-[1200px] 2xl:h-[600px] lg:w-[800px] lg:h-[400px] object-cover aspect-[1/1] cursor-pointer'
+          className='2xl:w-[1200px] 2xl:h-[600px] lg:w-[800px] lg:h-[400px] w-[500px] h-[200px] object-contain aspect-[1/1] cursor-pointer'
         />
       </div>
     </Link>

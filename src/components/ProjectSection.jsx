@@ -4,12 +4,18 @@ import Button from './Button'
 import AutoCarousel from './AutoCarousel'
 const ProjectSection = ({ elem, index }) => {
   const { title, description, buttonText, link, img } = elem
+  const x = index % 2 !== 0 ? 30 : -30
+  const reverseX = index % 2 === 0 ? 30 : -30
   return (
     <div className='w-full '>
-      <div className='flex flex-col justify-between lg:flex-row '>
-        <div className='flex flex-col justify-between '>
+      <div
+        className={`flex flex-col-reverse justify-between gap-6 lg:gap-0 ${
+          index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
+        } `}
+      >
+        <div className='flex flex-col gap-4 lg:justify-between '>
           <motion.h3
-            initial={{ opacity: 0, x: -30 }} // Start slightly lower for a natural rise effect
+            initial={{ opacity: 0, x: x }} // Start slightly lower for a natural rise effect
             whileInView={{ opacity: 1, x: 0 }} // Moves to its normal position
             transition={{
               type: 'spring',
@@ -18,13 +24,13 @@ const ProjectSection = ({ elem, index }) => {
               delay: 0.3, // Reduces wait time
             }}
             viewport={{ once: true }}
-            className='font-medium 2xl:text-4xl lg:text-3xl lg:text-nowrap'
+            className='text-2xl font-medium 2xl:text-4xl lg:text-3xl lg:text-nowrap'
           >
             {title}
           </motion.h3>
           <div className='flex flex-col gap-4'>
             <motion.p
-              initial={{ opacity: 0, x: -30 }} // Start slightly lower for a natural rise effect
+              initial={{ opacity: 0, x: x }} // Start slightly lower for a natural rise effect
               whileInView={{ opacity: 1, x: 0 }} // Moves to its normal position
               transition={{
                 type: 'spring',
@@ -39,7 +45,7 @@ const ProjectSection = ({ elem, index }) => {
             </motion.p>
             <motion.div
               data-hover-text='Explore'
-              initial={{ opacity: 0, x: -30 }} // Start slightly lower for a natural rise effect
+              initial={{ opacity: 0, x: x }} // Start slightly lower for a natural rise effect
               whileInView={{ opacity: 1, x: 0 }} // Moves to its normal position
               transition={{
                 type: 'spring',
@@ -70,10 +76,22 @@ const ProjectSection = ({ elem, index }) => {
             className='2xl:w-[1200px] 2xl:h-[600px] lg:w-[800px] lg:h-[400px] object-cover aspect-[1/1] cursor-pointer'
           />
         </Link> */}
-        <AutoCarousel
-          link={link}
-          images={img}
-        />
+        <motion.div
+          initial={{ opacity: 0, x: reverseX }} // Start slightly lower for a natural rise effect
+          whileInView={{ opacity: 1, x: 0 }} // Moves to its normal position
+          transition={{
+            type: 'spring',
+            stiffness: 120, // Slightly more bounce for a snappy feel
+            damping: 22, // Smooth stop without feeling abrupt
+            delay: 0.9, // Reduces wait time
+          }}
+          viewport={{ once: true }}
+        >
+          <AutoCarousel
+            link={link}
+            images={img}
+          />
+        </motion.div>
       </div>
     </div>
   )
