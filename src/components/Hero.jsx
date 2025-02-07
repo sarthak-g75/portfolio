@@ -79,7 +79,7 @@ const Hero = () => {
               damping: 10,
               delay: 1.2,
             }}
-            className='hidden text-3xl font-bold lg:block lg:w-1/2 2xl:text-9xl lg:text-6xl lg:text-wrap text-nowrap'
+            className='hidden text-3xl font-bold lg:block 2xl:w-1/2 2xl:text-9xl lg:text-6xl lg:text-wrap text-nowrap'
           >
             A Full Stack Developer
           </motion.h2>

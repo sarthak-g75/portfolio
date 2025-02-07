@@ -1,6 +1,7 @@
 import { motion } from 'motion/react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import Button from './Button'
+import Image from './Image'
 import AutoCarousel from './AutoCarousel'
 const ProjectSection = ({ elem, index }) => {
   const { title, description, buttonText, link, img } = elem
@@ -9,7 +10,7 @@ const ProjectSection = ({ elem, index }) => {
   return (
     <div className='flex flex-col justify-center w-full h-[60vh] lg:h-[80vh]'>
       <div
-        className={`flex flex-col-reverse justify-between gap-6 lg:gap-0 ${
+        className={`flex flex-col-reverse w-full  gap-6 lg:gap-12 ${
           index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
         } `}
       >
@@ -59,23 +60,7 @@ const ProjectSection = ({ elem, index }) => {
             </motion.div>
           </div>
         </div>
-        {/* <Link to={link}>
-          <motion.img
-            initial={{ opacity: 0, x: 30 }} // Start slightly lower for a natural rise effect
-            whileInView={{ opacity: 1, x: 0 }} // Moves to its normal position
-            transition={{
-              type: 'spring',
-              stiffness: 120, // Slightly more bounce for a snappy feel
-              damping: 22, // Smooth stop without feeling abrupt
-              delay: 0.5, // Reduces wait time
-            }}
-            data-hover-text='Read More'
-            viewport={{ once: true, amount: 0.3 }} // Triggers slightly sooner
-            src='/demo.png'
-            alt=''
-            className='2xl:w-[1200px] 2xl:h-[600px] lg:w-[800px] lg:h-[400px] object-cover aspect-[1/1] cursor-pointer'
-          />
-        </Link> */}
+        {/* <Image link={link} /> */}
         <motion.div
           initial={{ opacity: 0, x: reverseX }} // Start slightly lower for a natural rise effect
           whileInView={{ opacity: 1, x: 0 }} // Moves to its normal position

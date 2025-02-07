@@ -1,12 +1,13 @@
 import React from 'react'
+import SubTitle from './SubTitle'
 
 const About = () => {
   return (
     <div
-      className='h-screen'
+      className='flex flex-col items-center h-screen scroll-mt-10'
       id='about'
     >
-      About
+      <SubTitle title='About' />
     </div>
   )
 }

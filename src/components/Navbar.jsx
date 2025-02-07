@@ -84,7 +84,6 @@ const Navbar = () => {
                     ease: easeInOut,
                     delay: delay * (index + 1),
                   }}
-                  data-hover-text={link.name}
                   className='cursor-pointer'
                 >
                   {link.name}

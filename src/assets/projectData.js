@@ -4,7 +4,7 @@ export const projectData = [
     description: `Konnect Kitchen—Delhi NCR’s one-stop shop for premium crockery &
               utensils, serving up style with a seamless shopping experience!`,
     buttonText: 'Website Development',
-    link: '/',
+    link: '/project/1',
     img: [
       '/konnect-kitchen/img1.png',
       '/konnect-kitchen/img2.png',
@@ -16,7 +16,7 @@ export const projectData = [
     title: `Arkitekt`,
     description: `Gave Arkitekt a fresh new look with a sleek, redesigned website that puts their bold architectural vision front and center!`,
     buttonText: 'Web Design',
-    link: '/',
+    link: '/project/2',
     img: [
       '/arkitekt/img1.png',
       '/arkitekt/img2.png',
@@ -29,7 +29,7 @@ export const projectData = [
     title: `Funkyverse`,
     description: `Funkyverse is a whole vibe! 🔥 Bold, edgy, and straight-up statement-makers. The designs? Next-level. The quality? Top-tier. Every piece screams stand out. Can’t wait to see what’s next—def a must-have for the style rebels! `,
     buttonText: 'Web Design and Development',
-    link: '/',
+    link: '/project/3',
     img: [
       '/funky/img1.png',
       '/funky/img2.png',
@@ -42,7 +42,7 @@ export const projectData = [
     title: `Utilitiessave`,
     description: `Our revamped website beautifully showcases our energy-saving solutions with a seamless blend of design and functionality, ensuring a smooth and engaging user experience.`,
     buttonText: 'Web Design and Development',
-    link: '/',
+    link: '/project/4',
     img: [
       '/utilitiessave/img1.png',
       '/utilitiessave/img2.png',
