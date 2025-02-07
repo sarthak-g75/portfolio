@@ -3,7 +3,10 @@ import ProjectSection from './ProjectSection'
 import { projectData } from '../assets/projectData'
 const Projects = () => {
   return (
-    <div className='flex flex-col items-center '>
+    <div
+      className='flex flex-col items-center '
+      id='projects'
+    >
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

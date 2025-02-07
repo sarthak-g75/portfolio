@@ -4,7 +4,7 @@ import Navbar from './components/Navbar.jsx'
 import Cursor from './components/cursor.jsx'
 import Landing from './pages/Landing.jsx'
 import Footer from './components/Footer.jsx'
-
+import Contact from './pages/Contact.jsx'
 function App() {
   return (
     <div className='text-primary'>
@@ -15,6 +15,10 @@ function App() {
         <Route
           path='/'
           element={<Landing />}
+        />
+        <Route
+          path='/contact-me'
+          element={<Contact />}
         />
       </Routes>
       <Footer />

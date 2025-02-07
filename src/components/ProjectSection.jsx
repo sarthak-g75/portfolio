@@ -7,7 +7,7 @@ const ProjectSection = ({ elem, index }) => {
   const x = index % 2 !== 0 ? 30 : -30
   const reverseX = index % 2 === 0 ? 30 : -30
   return (
-    <div className='w-full '>
+    <div className='flex flex-col justify-center w-full h-[60vh] lg:h-[80vh]'>
       <div
         className={`flex flex-col-reverse justify-between gap-6 lg:gap-0 ${
           index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'

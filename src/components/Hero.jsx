@@ -19,11 +19,17 @@ const Hero = () => {
             delay: 1,
           }}
           className={`flex items-center justify-center gap-4 `}
-          style={{ x: yProgress * 300 }}
+          style={{ x: yProgress * 600 }}
         >
-          <img
+          {/* <img
             className='w-24 h-24 2xl:w-44 2xl:h-44 lg:w-32 lg:h-32'
             src='/darkLogo.svg'
+            // src='/lightLogo.svg'
+            alt='logo'
+          /> */}
+          <img
+            className='object-cover rounded-full w-44 h-36 2xl:w-52 2xl:h-52 lg:w-40 lg:h-40'
+            src='/pf.jpg'
             // src='/lightLogo.svg'
             alt='logo'
           />
@@ -81,7 +87,7 @@ const Hero = () => {
         <motion.div
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          style={{ x: yProgress * -300 }}
+          style={{ x: yProgress * -600 }}
           transition={{
             type: 'spring',
             stiffness: 100,

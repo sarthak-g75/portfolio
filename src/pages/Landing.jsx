@@ -1,3 +1,4 @@
+import About from '../components/About.jsx'
 import Hero from '../components/Hero.jsx'
 import Projects from '../components/Projects.jsx'
 const Landing = () => {
@@ -5,7 +6,7 @@ const Landing = () => {
     <>
       <Hero />
       <Projects />
-      {/* <div className='flex flex-col items-center justify-center w-full h-screen gap-4 lg:flex-row '></div> */}
+      <About />
     </>
   )
 }

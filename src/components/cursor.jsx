@@ -54,9 +54,9 @@ const cursor = () => {
   }, [])
   return (
     <motion.div
-      className={`fixed top-0 left-0 z-[999] rounded-full pointer-events-none ${
+      className={`fixed top-0 left-0 z-[999] rounded-full pointer-events-none hidden lg:flex ${
         !isHovered && `mix-blend-difference`
-      } flex items-center justify-center text-black font-medium 
+      } flex items-center justify-center text-black font-medium  
       `}
       style={{
         x: mousePos.x,
