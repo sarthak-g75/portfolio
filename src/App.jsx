@@ -9,7 +9,7 @@ import ProjectPage from './pages/ProjectPage.jsx'
 import JumpToTopButton from './components/JumpToTopButton.jsx'
 function App() {
   return (
-    <div className='text-primary'>
+    <>
       <JumpToTopButton />
       <Bg />
       <Cursor />
@@ -29,7 +29,7 @@ function App() {
         />
       </Routes>
       <Footer />
-    </div>
+    </>
   )
 }
 

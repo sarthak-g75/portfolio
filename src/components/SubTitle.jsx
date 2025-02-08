@@ -3,7 +3,8 @@ const SubTitle = ({ title }) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
       transition={{ duration: 1, delay: 1.2, ease: 'easeOut' }}
       className='flex flex-col md:w-[90%] w-[85%] gap-4  '
     >

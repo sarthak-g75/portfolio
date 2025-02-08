@@ -28,12 +28,12 @@ const Hero = () => {
             alt='logo'
           /> */}
           <img
-            className='object-cover rounded-full w-44 h-36 2xl:w-52 2xl:h-52 lg:w-40 lg:h-40'
+            className='object-cover rounded-full w-44 h-36 2xl:w-52 2xl:h-52 lg:w-28 lg:h-28'
             src='/pf.jpg'
             // src='/lightLogo.svg'
             alt='logo'
           />
-          <h1 className='text-3xl font-thin 2xl:text-9xl lg:text-6xl'>
+          <h1 className='text-3xl 2xl:text-9xl lg:text-6xl'>
             I'm Sarthak Gupta
           </h1>
         </motion.div>
@@ -63,7 +63,7 @@ const Hero = () => {
               damping: 10,
               delay: 1.6,
             }}
-            className='hidden text-lg md:block lg:w-1/3 2xl:text-2xl lg:text-xl'
+            className='hidden text-lg lg:text-right 2xl:text-left md:block lg:w-1/3 2xl:text-2xl lg:text-lg'
           >
             MERN stack developer with 1 year of professional and 3 years of
             freelance experience. I create scalable, user-centric applications
@@ -79,7 +79,7 @@ const Hero = () => {
               damping: 10,
               delay: 1.2,
             }}
-            className='hidden text-3xl font-bold lg:block 2xl:w-1/2 2xl:text-9xl lg:text-6xl lg:text-wrap text-nowrap'
+            className='hidden text-3xl font-semibold lg:block 2xl:w-1/2 2xl:text-9xl lg:text-6xl '
           >
             A Full Stack Developer
           </motion.h2>
