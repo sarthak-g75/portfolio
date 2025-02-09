@@ -35,6 +35,7 @@ const AboutInroSection = () => {
                 <TechStack
                   key={index}
                   tech={tech}
+                  index={index}
                 />
               )
             })}

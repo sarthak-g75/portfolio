@@ -1,8 +1,14 @@
-import React from 'react'
-
-const TechStack = ({ tech }) => {
+import { motion } from 'motion/react'
+const TechStack = ({ tech, index }) => {
+  // console.log(index)
   return (
-    <div className='flex flex-col items-center justify-center '>
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, delay: 0.3 * index }}
+      className='flex flex-col items-center justify-center '
+    >
       <img
         src={tech.logo}
         alt={tech.name}
@@ -11,7 +17,7 @@ const TechStack = ({ tech }) => {
       <span className='mt-2 text-xs font-semibold text-center lg:text-sm text-nowrap '>
         {tech.name}
       </span>
-    </div>
+    </motion.div>
   )
 }
 
