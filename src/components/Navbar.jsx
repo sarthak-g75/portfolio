@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
-import { Moon, Sun } from 'lucide-react'
+import { Menu, Moon, Sun, X } from 'lucide-react'
 import { easeInOut, motion } from 'motion/react'
 const name = 'Sarthak Gupta'
 const links = [
@@ -9,9 +9,58 @@ const links = [
   { name: 'Contact', to: '/contact-me', nav: true },
 ]
 const delay = 0.5
+
+const Links = ({ links, handleScrollLinkClick }) => {
+  return (
+    <div className='flex flex-col items-center justify-center w-full gap-4 lg:flex-row lg:gap-8 '>
+      {links.map((link, index) =>
+        link.nav ? (
+          <Link
+            key={link.name}
+            to={link.to}
+            className='transition-all duration-300 hover:scale-110'
+          >
+            <motion.h2
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{
+                duration: 0.6,
+                ease: easeInOut,
+                delay: delay * index,
+              }}
+              className='cursor-pointer'
+            >
+              {link.name}
+            </motion.h2>
+          </Link>
+        ) : (
+          <div
+            onClick={() => handleScrollLinkClick(link.to)}
+            className='transition-all duration-300 hover:scale-110'
+          >
+            <motion.h2
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{
+                duration: 0.6,
+                ease: easeInOut,
+                delay: delay * index,
+              }}
+              className='cursor-pointer'
+            >
+              {link.name}
+            </motion.h2>
+          </div>
+        )
+      )}
+    </div>
+  )
+}
+
 const Navbar = () => {
   const location = useLocation()
   const navigate = useNavigate()
+  const [openMenu, setOpenMenu] = useState(false)
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light')
 
   useEffect(() => {
@@ -41,8 +90,9 @@ const Navbar = () => {
         ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
   }
+  // console.log(openMenu)
   return (
-    <nav className='relative   h-[8vh] flex items-center lg:px-10 px-4'>
+    <nav className='relative h-[8vh] flex items-center lg:px-10 px-4'>
       <div className='flex items-center justify-between w-full'>
         <Link
           to='/'
@@ -66,51 +116,35 @@ const Navbar = () => {
           >
             {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
           </button>
-          {links.map((link, index) =>
-            link.nav ? (
-              <Link
-                key={link.name}
-                to={link.to}
-                className='transition-all duration-300 hover:scale-110'
+          <div className='relative cursor-pointer lg:hidden'>
+            {/* Menu Icon */}
+            <div onClick={() => setOpenMenu((prev) => !prev)}>
+              {openMenu ? <X size={24} /> : <Menu size={24} />}
+            </div>
+
+            {/* Dropdown Menu */}
+            {openMenu && (
+              <motion.div
+                initial={{ opacity: 0, x: 20 }} // Start slightly offscreen
+                animate={{ opacity: 1, x: 0 }} // Slide into place
+                exit={{ opacity: 0, x: 20 }} // Slide out on close
+                transition={{ duration: 0.3, ease: 'easeInOut' }}
+                className='absolute top-0 right-8 flex flex-col items-center justify-center gap-4 p-4 w-[50vw] h-max bg-accent dark:bg-darkAccent  z-20 text-primary dark:text-darkPrimary rounded-xl shadow-lg'
               >
-                <motion.h2
-                  initial={{ y: 30, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{
-                    duration: 0.8,
-                    ease: easeInOut,
-                    delay: delay * (index + 1),
-                  }}
-                  className='cursor-pointer'
-                >
-                  {link.name}
-                </motion.h2>
-              </Link>
-            ) : (
-              <div
-                // smooth={true}
-                // duration={500}
-                // offset={-50}
-                // key={link.name}
-                // to={link.to}
-                onClick={() => handleScrollLinkClick(link.to)}
-                className='transition-all duration-300 hover:scale-110'
-              >
-                <motion.h2
-                  initial={{ y: 30, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{
-                    duration: 0.8,
-                    ease: easeInOut,
-                    delay: delay * (index + 1),
-                  }}
-                  className='cursor-pointer'
-                >
-                  {link.name}
-                </motion.h2>
-              </div>
-            )
-          )}
+                <Links
+                  links={links}
+                  handleScrollLinkClick={handleScrollLinkClick}
+                />
+              </motion.div>
+            )}
+          </div>
+
+          <div className='items-center hidden gap-4 lg:flex lg:gap-8 '>
+            <Links
+              links={links}
+              handleScrollLinkClick={handleScrollLinkClick}
+            />
+          </div>
         </div>
         <motion.div
           initial={{ width: 0, opacity: 0 }}
