@@ -21,19 +21,13 @@ const Hero = () => {
           className={`flex items-center justify-center gap-4 `}
           style={{ x: yProgress * 600 }}
         >
-          {/* <img
-            className='w-24 h-24 2xl:w-44 2xl:h-44 lg:w-32 lg:h-32'
-            src='/darkLogo.svg'
-            // src='/lightLogo.svg'
-            alt='logo'
-          /> */}
           <img
-            className='object-cover rounded-full w-44 h-36 2xl:w-52 2xl:h-52 lg:w-28 lg:h-28'
+            className='object-cover rounded-full w-28 h-28 2xl:w-52 2xl:h-52 lg:w-28 lg:h-28'
             src='/pf.jpg'
             // src='/lightLogo.svg'
             alt='logo'
           />
-          <h1 className='text-3xl 2xl:text-9xl lg:text-6xl'>
+          <h1 className='text-2xl 2xl:text-9xl lg:text-6xl'>
             I'm Sarthak Gupta
           </h1>
         </motion.div>
