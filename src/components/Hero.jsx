@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { motion } from 'motion/react'
 import { scroll } from 'motion'
 const Hero = () => {
-  const [yProgress, setYProgress] = React.useState(0)
+  const [yProgress, setYProgress] = useState(0)
   // const scrollYProgress = scroll((progress) => console.log(progress))
   scroll((progress) => setYProgress(progress))
   // console.log(yProgress)

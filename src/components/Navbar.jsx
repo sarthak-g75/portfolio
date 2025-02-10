@@ -53,12 +53,12 @@ const Navbar = () => {
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: easeInOut }}
-            className='text-lg font-semibold cursor-pointer 2xl:text-2xl text-nowrap lg:text-xl'
+            className='text-xl font-semibold cursor-pointer 2xl:text-3xl text-nowrap lg:text-2xl'
           >
             {name}
           </motion.h2>
         </Link>
-        <div className='flex items-center gap-4 text-lg font-medium lg:gap-8'>
+        <div className='flex items-center gap-4 text-lg font-bold lg:gap-8'>
           {/* Theme Toggle Button */}
           <button
             onClick={toggleTheme}
@@ -71,7 +71,7 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 to={link.to}
-                className='transition-all duration-300 text-text hover:scale-110'
+                className='transition-all duration-300 hover:scale-110'
               >
                 <motion.h2
                   initial={{ y: 30, opacity: 0 }}
@@ -94,7 +94,7 @@ const Navbar = () => {
                 // key={link.name}
                 // to={link.to}
                 onClick={() => handleScrollLinkClick(link.to)}
-                className='transition-all duration-300 text-text hover:scale-110'
+                className='transition-all duration-300 hover:scale-110'
               >
                 <motion.h2
                   initial={{ y: 30, opacity: 0 }}
