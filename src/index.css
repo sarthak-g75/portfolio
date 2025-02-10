@@ -7,8 +7,11 @@
 @tailwind utilities;
 
 body {
-    @apply font-space text-primary;
+    @apply font-space text-accent;
   }
+.dark body{
+  @apply text-darkAccent
+}
 
   
   html {

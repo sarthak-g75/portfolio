@@ -1,8 +1,7 @@
-// import { Link } from 'react-router-dom'
-// import { Link as ScrollLink } from 'react-scroll'
+import { useEffect, useState } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
+import { Moon, Sun } from 'lucide-react'
 import { easeInOut, motion } from 'motion/react'
-
 const name = 'Sarthak Gupta'
 const links = [
   { name: 'About', to: 'about' },
@@ -13,6 +12,20 @@ const delay = 0.5
 const Navbar = () => {
   const location = useLocation()
   const navigate = useNavigate()
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light')
+
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+    localStorage.setItem('theme', theme)
+  }, [theme])
+
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light')
+  }
 
   const handleScrollLinkClick = (to) => {
     if (location.pathname !== '/') {
@@ -45,7 +58,14 @@ const Navbar = () => {
             {name}
           </motion.h2>
         </Link>
-        <div className='flex gap-4 text-lg font-medium lg:gap-8'>
+        <div className='flex items-center gap-4 text-lg font-medium lg:gap-8'>
+          {/* Theme Toggle Button */}
+          <button
+            onClick={toggleTheme}
+            className='p-2 transition-all duration-300 rounded-full bg-accent dark:bg-darkAccent text-primary dark:text-darkPrimary hover:scale-110'
+          >
+            {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+          </button>
           {links.map((link, index) =>
             link.nav ? (
               <Link
@@ -96,7 +116,7 @@ const Navbar = () => {
           initial={{ width: 0, opacity: 0 }}
           animate={{ width: '100%', opacity: 1 }}
           transition={{ duration: 1.5, ease: 'easeOut' }}
-          className='absolute bottom-0 w-full h-[2px] left-0 bg-primary'
+          className='absolute bottom-0 w-full h-[2px] left-0 bg-accent dark:bg-darkAccent'
         />
       </div>
     </nav>

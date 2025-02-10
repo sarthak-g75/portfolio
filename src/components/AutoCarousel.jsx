@@ -20,7 +20,10 @@ const AutoCarousel = ({ link, images }) => {
       className='relative flex justify-center w-full h-auto overflow-hidden '
       ref={carouselRef}
     >
-      <div data-hover-text='Read More'>
+      <div
+        data-hover-text='Read More'
+        className=''
+      >
         <motion.img
           key={index} // Forces re-animation on image change
           src={images[index]}
@@ -34,7 +37,7 @@ const AutoCarousel = ({ link, images }) => {
             damping: 20,
             duration: 0.8,
           }}
-          className='2xl:w-[1200px] 2xl:h-[600px] lg:w-[800px] lg:h-[400px] w-[500px] h-[200px] object-contain aspect-[1/1] cursor-pointer'
+          className='2xl:w-[1200px] 2xl:h-[600px] lg:w-[800px] lg:h-[400px] w-[500px] h-[200px] object-contain aspect-[1/1] cursor-pointer '
         />
       </div>
     </Link>
