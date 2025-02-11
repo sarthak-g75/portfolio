@@ -24,7 +24,7 @@ const Footer = () => {
           )
         })}
       </div>
-      <div className='flex flex-col items-start h-full p-10 lg:p-20 lg:justify-evenly'>
+      <div className='flex flex-col items-start h-full gap-10 p-10 lg:p-20 lg:justify-evenly'>
         <div className='lg:w-2/3'>
           <FooterText />
         </div>
