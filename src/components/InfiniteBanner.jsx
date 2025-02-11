@@ -10,7 +10,7 @@ const InfiniteBanner = ({ text }) => {
       className=' whitespace-nowrap'
       initial={{ x: 0 }}
       animate={{ x: '-100%' }} // Moves left infinitely
-      transition={{ ease: 'linear', duration: 8, repeat: Infinity }} // Smooth infinite animation
+      transition={{ ease: 'linear', duration: 10, repeat: Infinity }} // Smooth infinite animation
     >
       <h3 className='inline-block font-bold text-primary text-[100px]'>
         {text} • {text} • {text} • {text}
