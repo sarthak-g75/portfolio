@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "emailjs": "^4.0.3",
     "locomotive-scroll": "^4.1.4",
     "lucide-react": "^0.475.0",
     "motion": "^12.0.6",

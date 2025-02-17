@@ -14,6 +14,7 @@ const Footer = () => {
         {text.split(' ').map((elem, index) => {
           return (
             <motion.h3
+              key={index}
               initial={{ x: -20, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 1, delay: index * 0.1 }}

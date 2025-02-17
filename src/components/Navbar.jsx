@@ -6,7 +6,7 @@ const name = 'Sarthak Gupta'
 const links = [
   { name: 'About', to: 'about' },
   { name: 'Projects', to: 'projects' },
-  { name: 'Contact', to: '/contact-me', nav: true },
+  { name: 'Contact', to: 'contact' },
 ]
 const delay = 0.5
 
@@ -16,7 +16,7 @@ const Links = ({ links, handleScrollLinkClick }) => {
       {links.map((link, index) =>
         link.nav ? (
           <Link
-            key={link.name}
+            key={index}
             to={link.to}
             className='transition-all duration-300 hover:scale-110'
           >
@@ -35,6 +35,7 @@ const Links = ({ links, handleScrollLinkClick }) => {
           </Link>
         ) : (
           <div
+            key={index}
             onClick={() => handleScrollLinkClick(link.to)}
             className='transition-all duration-300 hover:scale-110'
           >

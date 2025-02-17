@@ -1,9 +1,12 @@
+import Page from '../components/Page'
 import SubTitle from '../components/SubTitle'
 const Contact = () => {
   return (
-    <div className='h-screen'>
-      <SubTitle title='Contact ' />
-    </div>
+    <>
+      <div className='flex flex-col items-center h-screen'>
+        <SubTitle title='Contact ' />
+      </div>
+    </>
   )
 }
 
