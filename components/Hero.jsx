@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Image from 'next/image'
 import { motion } from 'motion/react'
 import { scroll } from 'motion'
 const Hero = () => {
@@ -22,6 +23,8 @@ const Hero = () => {
           style={{ x: yProgress * 600 }}
         >
           <img
+            // width={28}
+            // height={28}
             className='object-cover rounded-full w-28 h-28 2xl:w-52 2xl:h-52 lg:w-28 lg:h-28'
             src='/pf.jpg'
             // src='/lightLogo.svg'

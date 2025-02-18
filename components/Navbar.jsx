@@ -1,5 +1,7 @@
+'use client'
 import { useEffect, useState } from 'react'
-import { Link, useNavigate, useLocation } from 'react-router-dom'
+import Link from 'next/link'
+import { useRouter, usePathname } from 'next/navigation'
 import { Menu, Moon, Sun, X } from 'lucide-react'
 import { easeInOut, motion } from 'motion/react'
 const name = 'Sarthak Gupta'
@@ -17,7 +19,7 @@ const Links = ({ links, handleScrollLinkClick }) => {
         link.nav ? (
           <Link
             key={index}
-            to={link.to}
+            href={link.to}
             className='transition-all duration-300 hover:scale-110'
           >
             <motion.h2
@@ -59,10 +61,17 @@ const Links = ({ links, handleScrollLinkClick }) => {
 }
 
 const Navbar = () => {
-  const location = useLocation()
-  const navigate = useNavigate()
+  const location = usePathname()
+  const navigate = useRouter()
   const [openMenu, setOpenMenu] = useState(false)
-  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light')
+  const [theme, setTheme] = useState('light')
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme')
+    if (savedTheme) {
+      setTheme(savedTheme)
+    }
+  }, [])
 
   useEffect(() => {
     if (theme === 'dark') {
@@ -78,8 +87,8 @@ const Navbar = () => {
   }
 
   const handleScrollLinkClick = (to) => {
-    if (location.pathname !== '/') {
-      navigate('/')
+    if (location !== '/') {
+      navigate.push('/')
       setTimeout(() => {
         document
           .getElementById(to)
@@ -96,8 +105,8 @@ const Navbar = () => {
     <nav className='relative h-[8vh] flex items-center lg:px-10 px-4'>
       <div className='flex items-center justify-between w-full'>
         <Link
-          to='/'
-          smooth={true}
+          href='/'
+          smooth='true'
           duration={500}
         >
           <motion.h2

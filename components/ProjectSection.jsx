@@ -1,5 +1,5 @@
 import { motion } from 'motion/react'
-// import { Link } from 'react-router-dom'
+// import Link from 'next/link'
 import Button from './Button'
 import Image from './Image'
 import AutoCarousel from './AutoCarousel'

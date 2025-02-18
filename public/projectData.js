@@ -2,7 +2,7 @@ export const projectData = [
   {
     title: 'Konnect Kitchen',
     description: `Konnect Kitchen—Delhi NCR’s one-stop shop for premium crockery &
-              utensils, serving up style with a seamless shopping experience!`,
+                utensils, serving up style with a seamless shopping experience!`,
     buttonText: 'Website Development',
     link: '/project/1',
     img: [

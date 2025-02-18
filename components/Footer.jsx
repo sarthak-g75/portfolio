@@ -1,17 +1,18 @@
+'use client'
 import InfiniteBanner from './InfiniteBanner'
 import { motion } from 'motion/react'
-import VerticalLines from './VerticalLines'
+
 import FooterText from './FooterText'
 import Socials from './Socials'
-const text = 'Let’s Create Something Great '
 const Footer = () => {
+  const heading = 'Let’s Create Something Great'
   return (
     <footer className='flex flex-col justify-between w-full h-screen overflow-hidden bg-black text-primary lg:flex-row'>
       <div className='lg:hidden'>
-        <InfiniteBanner text={text} />
+        <InfiniteBanner text={heading} />
       </div>
       <div className='flex-col hidden lg:flex '>
-        {text.split(' ').map((elem, index) => {
+        {heading.split(' ').map((elem, index) => {
           return (
             <motion.h3
               key={index}

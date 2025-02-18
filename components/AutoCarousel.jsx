@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 
 const AutoCarousel = ({ link, images }) => {
   const [index, setIndex] = useState(0)
@@ -16,7 +16,7 @@ const AutoCarousel = ({ link, images }) => {
 
   return (
     <Link
-      to={link}
+      href={link}
       className='relative flex justify-center w-full h-auto overflow-hidden '
       ref={carouselRef}
     >

@@ -1,6 +1,5 @@
-import { motion } from 'motion/react'
 import ProjectSection from './ProjectSection'
-import { projectData } from '../assets/projectData'
+import { projectData } from '@/public/projectData'
 import SubTitle from './SubTitle'
 const Projects = () => {
   return (

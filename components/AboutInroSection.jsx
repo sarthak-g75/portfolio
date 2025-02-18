@@ -1,5 +1,5 @@
 import { motion } from 'motion/react'
-import { techStack } from '../assets/aboutData'
+import { techStack } from '@/public/techStack'
 import TechStack from './TechStack'
 const AboutInroSection = () => {
   return (
@@ -26,7 +26,7 @@ const AboutInroSection = () => {
         internet next. If it's got cool animations, blazing speed, and a dark
         theme, I’m in.
       </p>
-      <p className='text-lg'>
+      <div className='text-lg'>
         <div className='p-4 rounded-lg bg-primary text-accent'>
           <span className='font-bold '>Tech stack?</span>
           <div className='grid grid-cols-4 gap-6 my-4 rounded-lg lg:grid-cols-5 bg-primary text-accent '>
@@ -43,7 +43,7 @@ const AboutInroSection = () => {
           if it’s <span className='font-bold'>scalable and fun</span>, I’m
           building with it.
         </div>
-      </p>
+      </div>
       <div>
         <a
           className='text-lg font-semibold cursor-pointer hover:text-orange-400'

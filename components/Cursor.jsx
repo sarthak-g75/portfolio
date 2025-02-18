@@ -1,6 +1,7 @@
+'use client'
 import { useEffect, useState } from 'react'
 import { useSpring, motion } from 'motion/react'
-const cursor = () => {
+const Cursor = () => {
   const [hidden, setHidden] = useState(true)
   const [hoveredText, setHoveredText] = useState('')
   const [isHovered, setIsHovered] = useState(false)
@@ -80,4 +81,4 @@ const cursor = () => {
   )
 }
 
-export default cursor
+export default Cursor

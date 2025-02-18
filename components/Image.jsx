@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 
 const Image = ({ link }) => {
   return (
-    <Link to={link}>
+    <Link href={link}>
       <motion.img
         initial={{ opacity: 0, x: 30 }} // Start slightly lower for a natural rise effect
         whileInView={{ opacity: 1, x: 0 }} // Moves to its normal position
