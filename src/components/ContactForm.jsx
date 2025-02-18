@@ -112,7 +112,8 @@ const ContactForm = () => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
       transition={{ duration: 0.8, delay: 1.4 }}
       className='w-full p-6 font-bold rounded-lg shadow-lg bg-accent dark:bg-darkAccent bg-opacity-80 text-primary dark:text-darkPrimary'
     >
