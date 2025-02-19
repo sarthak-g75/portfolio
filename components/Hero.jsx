@@ -1,11 +1,21 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
-import { motion } from 'motion/react'
+import { motion, useScroll } from 'motion/react'
 import { scroll } from 'motion'
 const Hero = () => {
   const [yProgress, setYProgress] = useState(0)
+  const { scrollYProgress } = useScroll()
+  // console.log(scrollYProgress)
+  useEffect(() => {
+    // Subscribe to scrollYProgress changes
+    const unsubscribe = scrollYProgress.onChange((latest) => {
+      setYProgress(latest)
+    })
+    // Cleanup the subscription on unmount
+    return unsubscribe
+  }, [scrollYProgress])
   // const scrollYProgress = scroll((progress) => console.log(progress))
-  scroll((progress) => setYProgress(progress))
+  // scroll((progress) => setYProgress(progress))
   // console.log(yProgress)
   return (
     <section className='flex flex-col items-center justify-between lg:justify-center py-10 pb-20 lg:pb-0 lg:py-0 h-[75vh] lg:h-[80vh] gap-4 overflow-hidden px-10 lg:px-0'>
