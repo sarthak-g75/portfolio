@@ -80,11 +80,11 @@ const ContactForm = () => {
 
     emailjs
       .sendForm(
-        import.meta.env.VITE_SERVICE_ID,
-        import.meta.env.VITE_TEMPLATE_ID,
+        process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID,
         formRef.current,
         {
-          publicKey: import.meta.env.VITE_PUBLIC_KEY,
+          publicKey: process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY,
         }
       )
       .then(
