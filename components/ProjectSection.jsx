@@ -4,7 +4,7 @@ import Button from './Button'
 import Image from './Image'
 import AutoCarousel from './AutoCarousel'
 const ProjectSection = ({ elem, index }) => {
-  const { title, description, buttonText, link, img } = elem
+  const { title, description, buttonText, link, img, web } = elem
   const x = index % 2 !== 0 ? 30 : -30
   const reverseX = index % 2 === 0 ? 30 : -30
   return (
@@ -15,7 +15,9 @@ const ProjectSection = ({ elem, index }) => {
         } `}
       >
         <div className='flex flex-col gap-4 lg:justify-between '>
-          <motion.h3
+          <motion.a
+            target='_blank'
+            href={web}
             initial={{ opacity: 0, x: x }} // Start slightly lower for a natural rise effect
             whileInView={{ opacity: 1, x: 0 }} // Moves to its normal position
             transition={{
@@ -25,10 +27,10 @@ const ProjectSection = ({ elem, index }) => {
               delay: 0.3, // Reduces wait time
             }}
             viewport={{ once: true }}
-            className='text-2xl font-medium 2xl:text-4xl lg:text-3xl lg:text-nowrap'
+            className='text-2xl  2xl:text-4xl lg:text-3xl lg:text-nowrap hover:text-orange-400 font-semibold'
           >
             {title}
-          </motion.h3>
+          </motion.a>
           <div className='flex flex-col gap-4'>
             <motion.p
               initial={{ opacity: 0, x: x }} // Start slightly lower for a natural rise effect

@@ -1,6 +1,7 @@
 export const projectData = [
   {
     title: 'Konnect Kitchen',
+    web: 'https://www.konnectkitchen.com/',
     description: `Konnect Kitchen—Delhi NCR’s one-stop shop for premium crockery &
                 utensils, serving up style with a seamless shopping experience!`,
     buttonText: 'Website Development',
@@ -27,6 +28,7 @@ export const projectData = [
   },
   {
     title: `Funkyverse`,
+    web: 'https://www.thefunkyverse.com/',
     description: `Funkyverse is a whole vibe! 🔥 Bold, edgy, and straight-up statement-makers. The designs? Next-level. The quality? Top-tier. Every piece screams stand out. Can’t wait to see what’s next—def a must-have for the style rebels! `,
     buttonText: 'Web Design and Development',
     link: '/project/3',
@@ -40,6 +42,7 @@ export const projectData = [
   },
   {
     title: `Utilitiessave`,
+    web: 'https://utilitiessave.com/',
     description: `Our revamped website beautifully showcases our energy-saving solutions with a seamless blend of design and functionality, ensuring a smooth and engaging user experience.`,
     buttonText: 'Web Design and Development',
     link: '/project/4',
