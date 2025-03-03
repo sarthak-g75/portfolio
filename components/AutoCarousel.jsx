@@ -15,13 +15,14 @@ const AutoCarousel = ({ link, images }) => {
   }, [isInView, images.length])
 
   return (
-    <Link
+    <a
       href={link}
+      target='_blank'
       className='relative flex justify-center w-full h-auto overflow-hidden '
       ref={carouselRef}
     >
       <div
-        data-hover-text='Read More'
+        data-hover-text={link ? 'Visit Website' : undefined}
         className=''
       >
         <motion.img
@@ -40,7 +41,7 @@ const AutoCarousel = ({ link, images }) => {
           className='2xl:w-[1200px] 2xl:h-[600px] lg:w-[800px] lg:h-[400px] w-[500px] h-[200px] object-contain aspect-[1/1] cursor-pointer '
         />
       </div>
-    </Link>
+    </a>
   )
 }
 

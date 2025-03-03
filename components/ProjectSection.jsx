@@ -58,7 +58,12 @@ const ProjectSection = ({ elem, index }) => {
               }}
               viewport={{ once: true }}
             >
-              <Button text={buttonText} />
+              {web && (
+                <Button
+                  link={web}
+                  text={buttonText}
+                />
+              )}
             </motion.div>
           </div>
         </div>
@@ -75,7 +80,7 @@ const ProjectSection = ({ elem, index }) => {
           viewport={{ once: true }}
         >
           <AutoCarousel
-            link={link}
+            link={web}
             images={img}
           />
         </motion.div>
