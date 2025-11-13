@@ -16,6 +16,12 @@ const experienceData = [
     description:
       'Built and maintained full-stack web applications for business process automation.',
   },
+  {
+    name: 'Full Stack Developer',
+    time: '08-2024 - Present', 
+    company: 'Spark Eighteen',
+   
+  },
 ]
 
 const ExperienceSection = () => {
