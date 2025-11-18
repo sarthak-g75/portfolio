@@ -11,7 +11,7 @@ const experienceData = [
   },
   {
     name: 'Full Stack Developer',
-    time: '07-2023 - 11-2023',
+    time: '07-2024 - 08-2024',
     company: 'India SME Forum',
     description:
       'Built and maintained full-stack web applications for business process automation.',
